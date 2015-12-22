@@ -53,6 +53,8 @@ is_tree_clean "ACI.txt" || log_error "./makeaci changed something"
 
 git diff ${BASEBRANCH} -U0 | pep8 --diff || log_error "PEP8 --diff failed"
 
+git diff ${BASEBRANCH} --check || log_error "git diff --check reported whitespace errors"
+
 # if API.txt is changed require change in VERSION
 if ! git diff ${BASEBRANCH} --quiet -- API.txt;
 then
