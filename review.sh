@@ -1,6 +1,6 @@
 #!/bin/bash
 log_error() {
-	echo "ERROR: ${1}, continuing ..."
+	echo -e "ERROR: ${1}, continuing ...\n"
 	errs=(${errs[@]} "- ${1}\n")
 }
 
